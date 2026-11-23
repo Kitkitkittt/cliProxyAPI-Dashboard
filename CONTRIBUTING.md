@@ -52,9 +52,11 @@ This project adheres to a Code of Conduct. By participating, you are expected to
 
 ## 🛠️ Development Setup
 
+For a documentation-only task, use the [offline swarm-ready checks](SWARM_READY.md#offline-setup-and-verification); no server, browser session, or provider account is needed.
+
 ### Prerequisites
-- Go 1.21+
-- Node.js (for frontend development)
+- Go version declared in [go.mod](go.mod) (1.24.0 for this source)
+- The Dashboard frontend is tracked as [`static/management.html`](static/management.html); this checkout has no Node package manifest or install step for it.
 - Docker (optional, for containerized testing)
 
 ### Running Locally
