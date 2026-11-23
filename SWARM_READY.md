@@ -11,7 +11,7 @@ Give the working agent this prompt:
 
 ```text
 swarm ready: <one measurable repository objective>
-Read SWARM_READY.md and the applicable AGENTS.md. Continue the current owned
+Read SWARM_READY.md and CONTRIBUTING.md. Continue the current owned
 work or ready issue, establish the baseline and acceptance check, then prepare
 a bounded worker handoff. Use existing authorized tools and capacity. Report
 what is documented, implemented, tested, and observed separately.
@@ -21,9 +21,7 @@ If a `swarm-ready` skill is installed, load it. Otherwise execute the documented
 
 ## Repository starting point
 
-Read: [README.md](README.md), [go.mod](go.mod), [docs](docs), [.github](.github).
-
-Continue an existing approved issue or a clearly scoped user objective after inspecting the source map below. If none is selected, return the smallest useful improvement and its verifier as the handoff; do not begin a portfolio-wide rewrite.
+Read [CONTRIBUTING.md](CONTRIBUTING.md), [README.md](README.md), and the [Dashboard guide](docs/DASHBOARD.md). Continue the existing fork PR or scoped work order when fork issues are unavailable. For a new slice, record the outcome and verifier before editing. Do not treat an upstream issue as a fork work order.
 
 Start with one writer. Add workers only for disjoint changes or independent experiments whose results can be checked separately. Keep shared interfaces and final integration with one owner.
 
@@ -39,9 +37,13 @@ The base above is an inspection snapshot, not a permanent working branch. Refres
 6. **Verify and integrate.** Verify the exact returned commit independently in a clean environment. Recheck the final integrated revision when changes interact. Follow existing review, merge and deployment rules; a green worker report alone cannot override them. Use the narrowest checks that resolve a concrete risk.
 7. **Checkpoint and finish.** Save candidate SHA, evidence, measured outcome, remaining blockers and a precise next action before context/lease expiry. Reconcile lost or duplicate completions before retrying. Release only the run's owned resources after preserving evidence. Stop when the requested outcome is met or a concrete blocker prevents the next required action.
 
-## Verification starting point
+## Offline setup and verification
 
-No executable acceptance command was established by this bounded source inspection. Read `README.md`, `go.mod`, `.github` and record the narrowest existing check before implementation. Do not invent a `test` command or infer that the repository has no tests from this gap. For a documentation-only task, check links, factual source anchors and whitespace; do not build unrelated application code.
+For docs-only work, start at the repository root with Git. Set `base` to the agreed review-base SHA. Confirm scope with `git status --short` and `git diff --name-status "$base"`, check paths with `git ls-files --error-unmatch -- README.md CONTRIBUTING.md SWARM_READY.md go.mod cmd/server/main.go static/management.html .github/workflows/pr-test-build.yml`, resolve the changed relative links and headings locally, and require `git diff --check "$base"` to pass. No dependency install, build, or proxy instance is needed.
+
+For separately authorized source work, [go.mod](go.mod) declares Go 1.24.0, and [the contributor setup](CONTRIBUTING.md#running-locally) uses `go mod download` from the root. Read the [server entry point](cmd/server/main.go) or the [tracked Dashboard HTML](static/management.html) for the scoped surface; there is no declared Node package install for the Dashboard in this checkout.
+
+The [PR build definition](.github/workflows/pr-test-build.yml) uses the module toolchain and compiles `./cmd/server`. It does not run the `go test ./...` command listed in [Running Tests](CONTRIBUTING.md#running-tests). These are source declarations, not proof of workflow registration, successful builds, or live authentication, client, or provider behavior.
 
 ## Required handoff result
 

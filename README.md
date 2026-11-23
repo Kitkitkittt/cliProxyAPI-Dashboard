@@ -4,7 +4,7 @@
 
 ![CLIProxy](https://img.shields.io/badge/CLIProxy-v6.0-0075FF?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Go](https://img.shields.io/badge/Go-1.21+-00ADD8?style=for-the-badge&logo=go)
+![Go](https://img.shields.io/badge/Go-1.24+-00ADD8?style=for-the-badge&logo=go)
 
 [![GitHub Sponsor](https://img.shields.io/badge/Sponsor-❤️-ea4aaa?style=for-the-badge&logo=github-sponsors)](https://github.com/sponsors/0xAstroAlpha)
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-☕-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/astroalpha)
@@ -43,6 +43,7 @@
 | **[SDK Advanced](docs/sdk-advanced.md)** | Advanced SDK features |
 | **[SDK Access](docs/sdk-access.md)** | Access control documentation |
 | **[SDK Watcher](docs/sdk-watcher.md)** | File watcher documentation |
+| **[Swarm-ready handoff](SWARM_READY.md#offline-setup-and-verification)** | Contributor setup and Git-only documentation checks |
 
 ---
 
